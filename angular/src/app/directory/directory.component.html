@@ -1,0 +1,21 @@
+<h2>Beer Listing</h2>
+<form id="filter">
+  <label>Filter beers by brand:</label>
+  <input type="text" [ngModelOptions] = "{standalone: true}" [(ngModel)]="term"/>
+</form>
+<ul id="ninja-listing">
+
+  <li *ngFor="let beer of beers | filter:term">
+    <div class="single-ninja">
+
+      <span>{{beer.brand}} || {{beer.country}} || <img src="{{beer.imgUrl}}"></span>
+      <div (click)="removeBeer(beer)">delete</div>﻿
+    </div>
+  </li>
+</ul>
+<form id="add-ninja">
+  <input type="text" [(ngModel)]="brand" name="name" placeholder="Brand">
+  <input type="text" [(ngModel)]="country" name="belt" placeholder="Country">
+  <input type="text" [(ngModel)]="imgUrl" name="name" placeholder="URL">
+  <button (click)="fbPostData(brand, country, imgUrl)">Add Beer</button>
+</form>

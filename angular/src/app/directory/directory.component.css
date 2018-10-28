@@ -1,0 +1,15 @@
+img {
+  height: 40px;
+  position: relative;
+  bottom: -10px;
+}
+#ninja-listing {
+  margin: 0;
+  padding: 0;
+}
+
+#ninja-listing li {
+   list-style-type: none;
+    margin: 10px 0;
+}
+

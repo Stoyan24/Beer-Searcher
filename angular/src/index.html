@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Angular</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+<app-root></app-root>
+
+<script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBZz9fmzeyY4dDLy5JcCMaiXK6gFtGe7hA",
+    authDomain: "bs-angular.firebaseapp.com",
+    databaseURL: "https://bs-angular.firebaseio.com",
+    projectId: "bs-angular",
+    storageBucket: "bs-angular.appspot.com",
+    messagingSenderId: "90353449563"
+  };
+  firebase.initializeApp(config);
+</script>
+</body>
+</html>
