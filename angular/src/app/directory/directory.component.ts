@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Data} from '@angular/router';
 import {FilterPipe} from "../filter.pipe";
 import {DataService} from "../data.service";
-import { Observable } from 'rxjs';
+import {Observable} from 'rxjs';
 
 declare var firebase: any;
 
@@ -14,7 +14,7 @@ declare var firebase: any;
 })
 export class DirectoryComponent implements OnInit {
 
-  beers:any = [];
+  beers: any = [];
 
   constructor(private dataService: DataService) {
 
@@ -26,21 +26,18 @@ export class DirectoryComponent implements OnInit {
     this.fbGetData();
   }
 
-  fbGetData(){
-    firebase.database().ref('/').on('child_added', (snapshot) =>{
+  fbGetData() {
+    firebase.database().ref('/').on('child_added', (snapshot) => {
       this.beers.push(snapshot.val())
     })
   }
 
-  fbPostData(brand, country, imgUrl){
+  fbPostData(brand, country, imgUrl) {
     firebase.database().ref('/').push({brand: brand, country: country, imgUrl: imgUrl})
   }
 
-  removeBeer(key){
-    console.log(key.snapshot)
-
-    firebase.database().ref('/').child('/'+key).remove();
-}
-
-
+  removeBeer(key) {
+      firebase.database().ref('bs-angular').child().remove();
   }
+
+}
